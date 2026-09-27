@@ -31,7 +31,8 @@ public class Create_User {
 		    .post("https://gorest.co.in/public/v2/users")
 		    .jsonPath().getInt("id");
 		System.out.println("Generated id :"+id);
-		context.setAttribute("user_id", id);
+//		context.setAttribute("user_id", id); //this will make it only at test level
+		context.getSuite().setAttribute("user_id", id); // this will allow at suite level
 	}
 
 }
